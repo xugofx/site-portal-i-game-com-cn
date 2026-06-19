@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2d2a24;
+      line-height: 1.7;
+      padding: 0 1.25rem;
+    }
+
+    .page {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    /* 导航 */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0 0.5rem;
+      border-bottom: 1px solid #e6dfd3;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-brand span {
+      font-size: 1.15rem;
+      font-weight: 550;
+      letter-spacing: 0.02em;
+      color: #3d3529;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #5b5142;
+      padding: 0.2rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1f1b15;
+      border-bottom-color: #b8a58b;
+    }
+
+    /* hero */
+    .hero {
+      margin-bottom: 3.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+      color: #2b241b;
+    }
+
+    .hero p {
+      font-size: 1.04rem;
+      color: #4f473b;
+      max-width: 72%;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero .intro-tag {
+      display: inline-block;
+      background: #ede6da;
+      color: #3f372b;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* 引用提示块 */
+    .notice-box {
+      background: #f2ede3;
+      border-left: 5px solid #cdbb9f;
+      padding: 1.4rem 1.6rem;
+      border-radius: 0 12px 12px 0;
+      margin: 2rem 0;
+      font-size: 0.97rem;
+      line-height: 1.65;
+    }
+
+    .notice-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .notice-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .notice-box strong {
+      color: #362f26;
+      font-weight: 600;
+    }
+
+    /* 场景模块 */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 460;
+      margin: 2.8rem 0 0.2rem;
+      letter-spacing: -0.01em;
+      color: #2b241b;
+    }
+
+    .section-sub {
+      color: #6b604f;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .scenes {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .scene-item {
+      background: #fcfaf5;
+      border-radius: 20px;
+      padding: 1.5rem 1.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #ece4d6;
+      transition: box-shadow 0.15s;
+    }
+
+    .scene-item:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+
+    .scene-item h3 {
+      font-size: 1.15rem;
+      font-weight: 520;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #2f281e;
+    }
+
+    .scene-item h3 span {
+      background: #e0d6c5;
+      width: 1.6rem;
+      height: 1.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      color: #2b241b;
+    }
+
+    .scene-item p {
+      color: #4b4235;
+      margin: 0.25rem 0 0.5rem;
+      font-size: 0.97rem;
+    }
+
+    .scene-item .scene-note {
+      background: #f7f1e8;
+      padding: 0.4rem 0.9rem;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.82rem;
+      color: #4f4638;
+      margin-top: 0.2rem;
+    }
+
+    /* 常见说明 */
+    .faq-block {
+      margin: 3.2rem 0 1.5rem;
+    }
+
+    .faq-title {
+      font-size: 1.5rem;
+      font-weight: 460;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-desc {
+      color: #6b604f;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e6dfd1;
+      padding: 1rem 0;
+    }
+
+    .faq-item:first-of-type {
+      border-top: 1px solid #e6dfd1;
+    }
+
+    .faq-question {
+      font-weight: 530;
+      color: #2f281e;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-answer {
+      color: #4c4436;
+      font-size: 0.96rem;
+    }
+
+    .faq-answer a {
+      color: #7b6e58;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 450;
+    }
+
+    .faq-answer a:hover {
+      color: #1f1b15;
+    }
+
+    /* 页脚 */
+    .footer-note {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e6dfd3;
+      font-size: 0.85rem;
+      color: #736857;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-note a {
+      color: #6a5e4a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-note a:hover {
+      color: #2d2418;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body {
+        padding: 0 1rem;
+      }
+      .page {
+        padding: 1.5rem 0 3rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero p {
+        max-width: 100%;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        margin-top: 0.3rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .scene-item {
+        padding: 1.2rem 1.2rem;
+      }
+      .footer-note {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      .section-title {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 顶部导航 -->
+    <nav class="nav">
+      <div class="nav-brand">
+        <span>🎮 简易指引</span>
+      </div>
+      <div class="nav-links">
+        <a href="#guide">场景</a>
+        <a href="#faq">说明</a>
+        <a href="#info">备忘</a>
+      </div>
+    </nav>
+
+    <!-- 核心介绍 -->
+    <section class="hero">
+      <span class="intro-tag">日常 · 轻量导航</span>
+      <h1>爱游戏 · 从熟悉到顺手</h1>
+      <p>一份适合日常参考的简短指南。不绕弯子，只说关键。如果你常在电脑前找游戏、看资讯或管理账号，下面这几条或许能帮你省点时间。</p>
+      <div class="notice-box">
+        <p><strong>📌 访问提醒</strong> · 建议使用常用且更新及时的浏览器。部分页面可能需关闭广告拦截或允许弹出窗口，具体视浏览器设置而定。如遇到加载异常，可尝试清理缓存或稍后重试。</p>
+        <p>若遇到链接失效或页面空白，可换个时段再试，通常与本地网络环境有关。</p>
+      </div>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <h2 class="section-title" id="guide">三个你可能会遇到的场景</h2>
+    <p class="section-sub">不论你是偶尔看看还是经常使用，下面这些情况大概率会出现。</p>
+
+    <div class="scenes">
+      <div class="scene-item">
+        <h3><span>1</span> 找内容、看介绍</h3>
+        <p>想快速了解某款游戏的基本信息、更新动态或社区讨论？直接搜索或通过收藏夹进入服务页。大多数信息都能在主站找到分类入口。</p>
+        <span class="scene-note">🔍 建议先看「热门」或「最近更新」板块</span>
+      </div>
+
+      <div class="scene-item">
+        <h3><span>2</span> 账号与偏好设置</h3>
+        <p>登录后建议优先检查通知偏好和安全选项。部分功能需要绑定邮箱或手机，提前设置好能避免之后找回账号的麻烦。</p>
+        <span class="scene-note">⚙️ 密码建议使用独立且复杂的组合</span>
+      </div>
+
+      <div class="scene-item">
+        <h3><span>3</span> 跨设备同步 & 收藏</h3>
+        <p>如果你在办公室和家里都用到同一账号，记得开启同步收藏或浏览记录。这样换设备时就不用重新翻找了。</p>
+        <span class="scene-note">📎 部分同步功能需在设置中手动开启</span>
+      </div>
+    </div>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <div class="faq-block" id="faq">
+      <h2 class="faq-title">一些常见的情况</h2>
+      <p class="faq-desc">以下是根据日常反馈整理的简要说明，供你参考。</p>
+
+      <div class="faq-item">
+        <div class="faq-question">页面加载较慢或布局错位？</div>
+        <div class="faq-answer">通常与网络延迟或缓存有关。可先尝试刷新页面，或检查浏览器是否处于兼容模式。另外，部分旧版浏览器对现代布局支持有限，建议升级到最新版本。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">如何找到特定游戏的历史信息？</div>
+        <div class="faq-answer">在服务首页的搜索框输入关键词即可。也可以使用站内筛选功能按时间或分类查看。如果你第一次使用，可以从<a href="https://site-portal-i-game.com.cn">爱游戏</a>主页的导航栏进入「库」或「档案」分区。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">登录时提示「环境异常」怎么办？</div>
+        <div class="faq-answer">这通常是安全机制的触发，建议检查是否使用了代理或公共网络。可暂时关闭非必要插件，或尝试用手机热点验证。如果问题持续，可通过站内帮助通道联系支持。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">收藏的内容在其他设备上没同步？</div>
+        <div class="faq-answer">请确认所有设备都登录了同一个账号，并且同步功能处于开启状态。部分数据同步可能有几分钟延迟，耐心等待一下。如果超过一小时仍未同步，可以尝试手动触发同步（通常在设置页面底部）。</div>
+      </div>
+    </div>
+
+    <!-- 页脚 / 附加提示 -->
+    <div class="footer-note" id="info">
+      <div>© 简易指南 · 内容仅供日常参考</div>
+      <div>
+        <span>了解更多可前往 </span>
+        <a href="https://site-portal-i-game.com.cn">爱游戏</a>
+        <span> · 保持轻松</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
