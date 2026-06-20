@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>188bet · 平台说明与引导页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafbfc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            max-width: 720px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+            flex: 1;
+        }
+
+        /* Hero 横幅 */
+        .hero-banner {
+            margin-bottom: 3rem;
+            padding: 2.8rem 1.8rem;
+            background: linear-gradient(145deg, #ffffff 0%, #f2f5f9 100%);
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            border: 1px solid #eef2f6;
+        }
+
+        .hero-banner h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0a1929;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-banner .subhead {
+            font-size: 1.05rem;
+            color: #4b5b6b;
+            max-width: 500px;
+            margin: 0 auto;
+            padding-top: 0.2rem;
+            border-top: 2px solid #dce2ea;
+            display: inline-block;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+        }
+
+        /* 章节标题 */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 2.4rem 0 0.8rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #e1e8ef;
+            color: #1e2a3a;
+        }
+
+        /* 正文卡片氛围 */
+        .intro-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.6rem 1.8rem;
+            margin: 1.2rem 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #edf2f7;
+            transition: box-shadow 0.15s ease;
+        }
+
+        .intro-card p {
+            margin: 0.75rem 0;
+        }
+
+        .intro-card p:first-child {
+            margin-top: 0;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border: 1px solid #e9eef3;
+            border-radius: 14px;
+            padding: 1rem 1.3rem;
+            flex: 1 1 180px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-item .feature-label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 0.2rem;
+            color: #1e2a3a;
+        }
+
+        .feature-item .feature-desc {
+            font-size: 0.92rem;
+            color: #4a5a6c;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            background: #f4f7fb;
+            border-radius: 16px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.6rem 0;
+            border-left: 4px solid #9aaec2;
+        }
+
+        .faq-mini dt {
+            font-weight: 600;
+            margin-top: 0.8rem;
+            color: #1f2b3a;
+        }
+
+        .faq-mini dt:first-of-type {
+            margin-top: 0;
+        }
+
+        .faq-mini dd {
+            margin-left: 0;
+            padding-left: 0.2rem;
+            color: #3b4b5e;
+            font-size: 0.96rem;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            margin-top: 3.2rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dce2ea;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #59748f;
+        }
+
+        .footer-note a {
+            color: #1e3a5f;
+            text-decoration: none;
+            border-bottom: 1px dashed #b3c6d9;
+            font-weight: 500;
+        }
+
+        .footer-note a:hover {
+            border-bottom: 2px solid #1e3a5f;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .page-wrapper {
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            .hero-banner {
+                padding: 2rem 1rem;
+            }
+
+            .hero-banner h1 {
+                font-size: 1.7rem;
+            }
+
+            .intro-card {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .feature-grid {
+                flex-direction: column;
+            }
+
+            .feature-item {
+                flex: 1 1 auto;
+            }
+
+            .faq-mini {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-banner h1 {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- Hero 横幅 -->
+        <header class="hero-banner">
+            <h1>188bet · 页面引导</h1>
+            <div class="subhead">稳定入口 · 清晰说明 · 一站了解</div>
+        </header>
+
+        <!-- 背景说明段落 -->
+        <section>
+            <h2 class="section-title">关于这个页面</h2>
+            <div class="intro-card">
+                <p>
+                    本页是一份整理后的说明，面向希望了解 <a href="https://site-188bet.com">188bet</a> 平台背景与使用场景的用户。
+                    我们避免堆砌不实的描述，而是以平实的语言介绍其服务轮廓、常见用途以及访问时需要注意的细节。
+                </p>
+                <p>
+                    <a href="https://site-188bet.com">188bet</a> 长期面向中文用户提供服务，涵盖多种线上娱乐与体育相关项目。
+                    由于网络环境的复杂性，找到一个稳定且直接的访问方式，对持续使用尤为重要。
+                    以下内容即围绕这一点展开。
+                </p>
+            </div>
+        </section>
+
+        <!-- 三段自然介绍：稳定入口、页面特色、适用场景 -->
+        <section>
+            <h2 class="section-title">稳定的访问入口</h2>
+            <div class="intro-card">
+                <p>
+                    许多用户反馈，直接通过搜索引擎查找 <a href="https://site-188bet.com">188bet</a> 有时会遇到域名变动或无法打开的情况。
+                    因此，保留一个长期有效的链接地址，是保证访问连贯性的第一步。
+                    本站点即作为稳定入口之一，不经过中间跳转，用户可直接在浏览器中打开并浏览平台内容。
+                </p>
+                <p>
+                    同时建议用户收藏本页，或记住主域名结构。若未来出现访问波动，可依据页面提示获取最新可用路径。
+                </p>
+            </div>
+
+            <h2 class="section-title">页面说明与结构</h2>
+            <div class="intro-card">
+                <p>
+                    本介绍页以杂志专题的形式组织信息：顶部横幅概括主题，中间部分分段展开背景、特点与常见疑问摘要。
+                    每一段内容都经过筛选，不包含虚假承诺或诱导词语，只陈述客观事实与使用建议。
+                </p>
+                <p>
+                    在视觉上采用极简留白与窄正文宽度，让阅读节奏更舒缓。卡片与微妙的边界线帮助区分信息层级，适合快速浏览或详细阅读。
+                </p>
+            </div>
+
+            <h2 class="section-title">适用场景举例</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="feature-label">日常访问</span>
+                    <span class="feature-desc">通过固定入口打开平台，无需反复查找最新网址。</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">信息确认</span>
+                    <span class="feature-desc">在页面内了解平台功能轮廓，适合新用户初步判断。</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-label">备用收藏</span>
+                    <span class="feature-desc">将本页加入书签，作为长期可用的参考资料。</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ 摘要 -->
+        <section>
+            <h2 class="section-title">常见疑问摘要</h2>
+            <dl class="faq-mini">
+                <dt>如何确保链接一直有效？</dt>
+                <dd>直接使用 <a href="https://site-188bet.com">188bet</a> 域名，若出现无法加载，可稍后重试或查看页面是否有更新提示。一般建议保持浏览器缓存清洁。</dd>
+
+                <dt>页面内容是否涵盖所有功能？</dt>
+                <dd>本页为引导说明，只概述典型特点与访问方式。详细功能请直接在平台内查阅官方说明。</dd>
+
+                <dt>是否推荐使用第三方工具访问？</dt>
+                <dd>不主动推荐。使用官方直接提供的链接是最安全可靠的方式。本页未嵌入任何第三方脚本或跳转。</dd>
+            </dl>
+        </section>
+
+        <!-- 页尾访问提示 -->
+        <footer class="footer-note">
+            <p>
+                想要直接前往平台？以下链接可直达：<br>
+                <a href="https://site-188bet.com">188bet</a>
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #6a7f97;">
+                本页仅为信息介绍，不包含任何形式的诱导或承诺。请根据个人判断使用。
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
